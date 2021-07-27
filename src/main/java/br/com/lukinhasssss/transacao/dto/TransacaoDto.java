@@ -1,5 +1,7 @@
 package br.com.lukinhasssss.transacao.dto;
 
+import br.com.lukinhasssss.transacao.entities.Compra;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -16,6 +18,10 @@ public class TransacaoDto {
         this.id = id;
     }
 
+    public BigDecimal getValor() {
+        return valor;
+    }
+
     public void setValor(BigDecimal valor) {
         this.valor = valor;
     }
@@ -24,12 +30,24 @@ public class TransacaoDto {
         this.estabelecimento = estabelecimento;
     }
 
+    public Map<String, String> getCartao() {
+        return cartao;
+    }
+
     public void setCartao(Map<String, String> cartao) {
         this.cartao = cartao;
     }
 
+    public LocalDateTime getEfetivadaEm() {
+        return efetivadaEm;
+    }
+
     public void setEfetivadaEm(LocalDateTime efetivadaEm) {
         this.efetivadaEm = efetivadaEm;
+    }
+
+    public Compra converterParaEntidade() {
+        return new Compra(this);
     }
 
     @Override

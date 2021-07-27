@@ -137,3 +137,4 @@ services:
 volumes:
   grafana-volume:
   prometheus-volume:
+  mysql-volume:
